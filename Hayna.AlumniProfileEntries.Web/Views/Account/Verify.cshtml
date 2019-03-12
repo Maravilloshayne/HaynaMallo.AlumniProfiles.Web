@@ -1,0 +1,22 @@
+﻿@model Hayna.AlumniProfileEntries.Web.VIewModels.Account.VerifyViewModel
+@{
+    ViewData["Title"] = "Verify";
+    Layout = "~/views/shared/_publiclayout.cshtml";
+}
+<h2>Verify</h2>
+<div class="row">
+    <div class="col-md-6">
+        <form action="~/account/verify" method="post">
+            @Html.ValidationSummary()
+            <div class="form-group">
+                <label for="EmailAddress">EmailAddress:</label>
+                <input type="email" class="form-control" name="EmailAddress" />
+            </div>
+            <div class="form-group">
+                <label for="RegistrationCode">Registration Code:</label>
+                <input type="password" class="form-control" name="RegistrationCode" />
+            </div>
+            <a href="~/home/index"><button type="submit" class="btn btn-default">Submit</button></a>
+        </form>
+    </div>
+</div>

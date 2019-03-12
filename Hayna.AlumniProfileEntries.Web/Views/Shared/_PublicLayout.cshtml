@@ -1,0 +1,13 @@
+﻿@{
+    Layout = "~/views/shared/_Layout.cshtml";
+}
+@RenderBody();
+@section pageStyles{
+    @RenderSection("pageStyles", required: false)
+}
+@section pageScriptsTop{
+    @RenderSection("pageScriptsTop", required: false)
+}
+@section pageScripts{
+    @RenderSection("pageScripts", required: false)
+} 

@@ -1,0 +1,50 @@
+﻿@model Hayna.AlumniProfileEntries.Web.Areas.ViewModels.Alumni.UpdateDescriptionViewModel
+@{
+    ViewData["Title"] = "UpdateInfoViewModel";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Update Info. "@Model.Company"</h2>
+
+<dl>
+    <dt>Description</dt>
+    <dd> @Model.Description</dd>
+</dl>
+
+
+
+<div class="row">
+    <div class="hero-unit col-md-6">
+        <form action="~/manage/alumniprofiles/update-info" method="post">
+            @Html.ValidationSummary()
+            <input type="hidden" name="FaqId" value="@Model.AlumniProfileId" />
+
+            <div class="form-group ">
+                <label for="Position">Position</label>
+                <textarea id="position"  name="Position" style="height:100px;width:200px; ">@Model.Position</textarea>
+            </div>
+
+            <div class="form-group">
+                <label for="Location">Location</label>
+                <textarea id="location" name="Location  " style="height:100px;width:200px;">@Model.Location</textarea>
+            </div>
+
+            <div class="form-group">
+                <label for="FromDate">From Date</label>
+                <textarea id="fromdate" name="FromDate" style="height:100px;width:200px;">@Model.FromDate</textarea>
+            </div>
+
+            <div class="form-group">
+                <label for="ToDate">Content</label>
+                <textarea id="todate" name="ToDate" style="height:100px;width:200px;">@Model.ToDate</textarea>
+            </div>
+
+
+            <button type="submit" class="btn btn-primary">Submit</button>
+            <button type="submit" href="~/manage/alumniprofiles/Index" class="btn btn-danger">Cancel</button>
+           
+        </form>
+    </div>
+</div>
+
+

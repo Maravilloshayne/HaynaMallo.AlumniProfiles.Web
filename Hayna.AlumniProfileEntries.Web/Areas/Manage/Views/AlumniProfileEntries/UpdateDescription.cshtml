@@ -1,0 +1,38 @@
+﻿@model Hayna.AlumniProfileEntries.Web.Areas.ViewModels.Alumni.UpdateDescriptionViewModel
+@{
+    ViewData["Title"] = "UpdateDescription";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Update Description "@Model.Company"</h2>
+
+<dl>
+    <dt>Position</dt>
+    <dd> @Model.Position</dd>
+    <dt>Location</dt>
+    <dd> @Model.Location</dd>
+    <dt>From Date</dt>
+    <dd> @Model.FromDate</dd>
+
+    <dt>To Date</dt>
+    <dd> @Model.ToDate</dd>
+
+</dl>
+<div class="row">
+    <div class="hero-unit">
+        <form action="~/manage/alumniprofiles/update-description" method="post">
+            @Html.ValidationSummary()
+            <input type="hidden" name="AlumniProfileId" value="@Model.AlumniProfileId" />
+          
+            <div class="form-group">
+                <label for="Description">Description</label>
+                <textarea id="description" name="Description" style="height:300px;width:300px;">@Model.Description</textarea>
+            </div>
+
+
+            <button type="submit" class="btn btn-primary">Submit</button>
+            <a href="~/manage/alumniprofiles/Index" class="btn btn-danger">Cancel</a>
+        </form>
+    </div>
+</div>
+
